@@ -1,21 +1,157 @@
+import java.util.*;
 public class test{
     public static void main(String[] args){
+        //求一个数组的最大值/最小值/平均值/总和
+        //int[] arr = new int[]{1,2,3,4,5};
+        //int max = arr[0];
+        //int min = arr[0];
+        //int sum = arr[0];
+        //for(int i = 1;i < arr.length;i++)
+        //{
+        //    sum += arr[i];
+        //    if(max < arr[i])
+        //        max = arr[i];
+        //    if(min > arr[i])
+        //        min = arr[i];
+        //}
+        //System.out.println("最大值：" + max);
+        //System.out.println("最小值：" + min);
+        //System.out.println("平均值：" + (double)sum / arr.length);
+        //System.out.println("总和：" + sum);
+
+       //实现数组的拷贝
+      // int[] a = new int[]{1,2,3,4,5,6,7};
+      // int[] b = new int[]{10,11,12,13,14,15};
+      // System.arraycopy(b,3,a,1,3);
+      // printArr(a);
+
+       //实现数组排序
+       //int[] a = new int[]{2,5,3,6,1};
+       //char[] c = new char[]{'d','s','w','a'};
+       //java.util.Arrays.sort(a);
+       //java.util.Arrays.sort(c);
+       //printArr(a);
+       //printArr(c);
+
+       //方法修改数组
+       // int[] arr = init();
+       // bigger(arr);
+       // printArr(arr);
+
+        //方法返回数组
+        //int[] arr = init();
+        //printArr(arr);
+        
+        //方法接收数组
+        //int[] array = new int[]{1,2,3,4,5};
+        //printArr(array);
+        
+        //定一个二维数组
+        //int[][] data = new int[][]{
+        //    {1,2},{2,3},{3,4}
+        //};
+        //for(int i = 0;i < data.length;i++)
+        //{
+        //    System.out.print("{");
+        //    for(int j = 0; j < data[i].length;j++)
+        //    {
+        //        if(j != data[i].length - 1)
+        //            System.out.print(data[i][j] + ",");
+        //        else
+        //            System.out.print(data[i][j]);
+        //    }
+        //    System.out.println("}");
+        //}
+
+        //匿名数组
+        //System.out.println(new int[]{1,2,3,4,5}.length);
+        
         //System.out.println(add(2,3));
         //System.out.println(add(2,3,5));函数重载
+        
         //System.out.println(sum(100));递归求前100个数的和
+        
         //mul(9);//9*9乘法表
+        
         //System.out.println(jiecheng(60));
+        
         //递归实现快排
-        int[] array = new int[]{5,6,2,4,8,1,3};
-        for(int i = 0;i < array.length;i++)
+        //int[] array = new int[]{5,6,2,4,8,1,3};
+        //for(int i = 0;i < array.length;i++)
+        //{
+        //    System.out.print(array[i] + " ");
+        //}
+        //System.out.println();
+        //QuikSort(array,0,array.length-1);
+        //for(int i = 0;i < array.length;i++)
+        //{
+        //    System.out.print(array[i] + " ");
+        //}
+        //System.out.println();
+        
+        //定义一个数组
+        //int[] arr = new int[4];
+        //int[] arr = null;
+        //x = new int[4];
+        //System.out.println(arr.length);
+        //arr[0] = 1;
+        //arr[1] = 2;
+        //arr[2] = 3;
+        //arr[3] = 4;
+        //for(int i = 0;i < arr.length;i++)
+        //{
+        //    System.out.print(arr[i] + " ");
+        //}
+        //System.out.println();
+        
+        //多个栈内存指向相同的堆内存
+        //int[] x = null;
+        //int[] tmp = null;
+        //x = new int[3];
+        //x[0] = 0;
+        //x[1] = 1;
+        //x[2] = 2;
+        //for(int i = 0;i < x.length;i++)
+        //{
+        //    System.out.print(x[i] + " ");
+        //}
+        //System.out.println();
+        //tmp = x;
+        //tmp[0] = 9;
+        //for(int i = 0;i < x.length;i++)
+        //{
+        //    System.out.print(x[i] + " ");
+        //}
+        //System.out.println();
+        
+        //静态初始化定义数组
+        //int[] arr = {1,2,3,4,5};
+        //for(int i = 0;i < arr.length;i++)
+        //{
+        //    System.out.print(arr[i] + " ");
+        //}
+        //System.out.println();
+    }
+    public static void bigger(int[] arr){
+        for(int i = 0;i < arr.length;i++)
         {
-            System.out.print(array[i] + " ");
+            arr[i] *= 2;
+        }
+    }
+    public static int[] init(){
+        return new int[]{1,2,3,4,5};
+    }
+    public static void printArr(char[] c){
+        for(int i = 0;i < c.length;i++)
+        {
+            System.out.print(c[i] + " ");
         }
         System.out.println();
-        QuikSort(array,0,array.length-1);
-        for(int i = 0;i < array.length;i++)
+    }
+    public static void printArr(int[] arr){
+        for(int i = 0;i < arr.length;i++)
         {
-            System.out.print(array[i] + " ");
+            System.out.print(arr[i] + " ");
         }
         System.out.println();
     }
@@ -76,4 +212,3 @@ public class test{
         return a + b + c;
     }
 }
-
