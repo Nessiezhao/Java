@@ -1,6 +1,41 @@
 import java.util.*;
+class Person{
+    private String name;
+    private int age;
+    public Person(String name,int age){
+        this.name = name;
+        this.age = age;
+    }
+    public void getInfo(){
+        System.out.println("姓名：" + this.name + "," + "年龄：" + this.age);
+    }
+}
 public class test{
     public static void main(String[] args){
+        //数组静态初始化
+        Person[] per = new Person[]{
+            new Person("张三",10),
+            new Person("李斯",12),
+            new Person("王无",13)
+        };
+        for(int i = 0; i < per.length;i++)
+        {
+            per[i].getInfo();
+        }
+
+        //数组的动态初始化
+        //Person[] per = new Person[3];
+        //per[0] = new Person("张三",10);
+        //per[1] = new Person("李斯",12);
+        //per[2] = new Person("王无",13);
+        //for(int i = 0; i < per.length;i++)
+        //{
+        //    per[i].getInfo();
+        //}
+
+        //求一个数组的最大值/最小值/平均值/总和(写在一个函数里)
+        //processData(new int[]{1,2,3,4,5});
+
         //求一个数组的最大值/最小值/平均值/总和
         //int[] arr = new int[]{1,2,3,4,5};
         //int max = arr[0];
@@ -131,6 +166,26 @@ public class test{
         //    System.out.print(arr[i] + " ");
         //}
         //System.out.println();
+    }
+    public static void processData(int[] arr){
+        double[] result = new double[4];
+        result[0] = arr[0];//最大值
+        result[1] = arr[0];//最小值
+        result[2] = arr[0];//总和
+        result[3] = arr[0];//平均值
+        for(int i = 1;i < arr.length;i++)
+        {
+            result[2] += arr[i];
+            if(result[0] < arr[i])
+                result[0] = arr[i];
+            if(result[1] > arr[i])
+                result[1] = arr[i];
+        }
+        result[3] = (double)result[2] / arr.length;
+        System.out.println("最大值：" + result[0]);
+        System.out.println("最小值：" + result[1]);
+        System.out.println("总和：" + result[2]);
+        System.out.println("平均值：" + result[3]);
     }
     public static void bigger(int[] arr){
         for(int i = 0;i < arr.length;i++)
