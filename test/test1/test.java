@@ -2,26 +2,59 @@ import java.util.*;
 class Person{
     private String name;
     private int age;
-    public Person(String name,int age){
-        this.name = name;
-        this.age = age;
+    //public Person(String name,int age){
+    //    this.name = name;
+    //    this.age = age;
+    //}
+    public void setName(String n){
+        name = n;
+    }
+    public String getName(){
+        return name;
+    }
+    public void setAge(int a){
+        age = a;
+    }
+    public int getAge(){
+        return age;
     }
     public void getInfo(){
-        System.out.println("姓名：" + this.name + "," + "年龄：" + this.age);
+        System.out.print("姓名：" + this.name + "," + "年龄：" + this.age);
     }
 }
+//class Person{
+//    String name;
+//    int age;
+//}
 public class test{
     public static void main(String[] args){
+        //扩展Person类的内容
+        Person p = new Person();
+        p.setName("张三");
+        p.setAge(10);
+        p.getInfo();
+
+        //对象内存分析
+        //Person p = new Person();
+        //p.name = "张三";
+        //p.age = 10;
+        //System.out.print(p.name + p.age);
+        
+        //通过对象调用实例对象与实例方法
+        //Person p = new Person("张三",10);
+        //System.out.println(p.name);
+        //System.out.println(p.getInfo());
+
         //数组静态初始化
-        Person[] per = new Person[]{
-            new Person("张三",10),
-            new Person("李斯",12),
-            new Person("王无",13)
-        };
-        for(int i = 0; i < per.length;i++)
-        {
-            per[i].getInfo();
-        }
+        //Person[] per = new Person[]{
+        //    new Person("张三",10),
+        //    new Person("李斯",12),
+        //    new Person("王无",13)
+        //};
+        //for(int i = 0; i < per.length;i++)
+        //{
+        //    per[i].getInfo();
+        //}
 
         //数组的动态初始化
         //Person[] per = new Person[3];
