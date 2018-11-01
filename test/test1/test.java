@@ -1,38 +1,139 @@
 import java.util.*;
-class Person{
-    private String name;
-    private int age;
+//class Person{
+//    private String name;
+//    private int age;
+//    public Person(){
+//        System.out.println("*****************");
+//    }
+//    public Person(String name){
+//        this();
+//        this.name = name;
+//    }
+//    public Person(String name,int age){
+//        this(name);
+//        this.age = age;
+//    }
     //public Person(String name,int age){
     //    this.name = name;
     //    this.age = age;
     //}
-    public void setName(String n){
-        name = n;
-    }
-    public String getName(){
-        return name;
-    }
-    public void setAge(int a){
-        age = a;
-    }
-    public int getAge(){
-        return age;
-    }
-    public void getInfo(){
-        System.out.print("姓名：" + this.name + "," + "年龄：" + this.age);
-    }
-}
+    //public Person(){
+    //    System.out.println("无参构造");
+    //}
+    //public Person(String n){
+    //    name = n;
+    //    System.out.println("有参构造");
+    //}
+    //public void setName(String n){
+    //    name = n;
+    //}
+    //public String getName(){
+    //    return name;
+    //}
+    //public void setAge(int a){
+    //    age = a;
+    //}
+    //public int getAge(){
+    //    return age;
+    //}
+    //public void getInfo(){
+    //    System.out.println("姓名：" + this.name + "," + "年龄：" + this.age);
+    //}
+//}
 //class Person{
 //    String name;
 //    int age;
 //}
+//this表示当前对象
+//class Person{
+//    public void print(){
+//        System.out.println("[PRINT]方法：" + this);
+//    }
+//}
+//static定义的方法，直接通过类名称访问
+//class Person{
+//    private static String country;
+//    private String name;
+//    private int age;
+//    public Person(String name,int age){
+//        this.name = name;
+//        this.age = age;
+//    }
+//    public static void setCountry(String c){
+//        country = c;
+//    }
+//    public void getInfo(){
+//        System.out.println("国家：" + this.country + "姓名：" + this.name + "年龄：" + this.age);
+//    }
+//}
+
+//构造块/静态代码块
+//class Person{
+//    {
+//        System.out.println("1.Person类的构造块");
+//    }
+//    public Person(){
+//        System.out.println("2.Person类的构造方法");
+//    }
+//    static{//非主类的静态代码块
+//        System.out.println("3.Person类的静态块");
+//    }
+//}
 public class test{
+    ////主类中的静态块要优先于主方法执行
+    //{
+    //    System.out.println("1.主类的构造块");
+    //}
+    //public test(){
+    //    System.out.println("2.主类的构造方法");
+    //}
+    //static{//非主类的静态代码块
+    //    System.out.println("3.主类的静态块");
+    //}
     public static void main(String[] args){
+        //构造块
+        //System.out.println("--start--");
+        //new test();
+        //new test();
+        //System.out.println("--end--");
+        
+        //普通代码块
+      //{
+        //    int x = 10;
+        //    System.out.println("x = " + x );
+        //}
+        //int x = 100;
+        //System.out.println("x = " + x);
+
+        //static定义的方法，直接通过类名称访问
+        //Person.setCountry("中国");
+        //Person p = new Person("张三",10);
+        //p.getInfo();
+
+        //this表示当前对象
+        //Person p1 = new Person();
+        //System.out.println("MAIN方法：" + p1);
+        //p1.print();
+
+        //构造方法的互相调用(this)
+       // Person p1 = new Person();
+       // Person p2 = new Person("张三");
+       // Person p3 = new Person("李斯",10);
+
+
+        //无参构造和有参构造
+        //Person p1 = new Person();
+        //Person p2 = new Person("张三");
+
+        //使用构造方法设置对象属性
+        //Person p = new Person("张三",10);
+        //p.getInfo();
+
         //扩展Person类的内容
-        Person p = new Person();
-        p.setName("张三");
-        p.setAge(10);
-        p.getInfo();
+        //Person p = new Person();
+        //p.setName("张三");
+        //p.setAge(10);
+        //p.getInfo();
 
         //对象内存分析
         //Person p = new Person();
