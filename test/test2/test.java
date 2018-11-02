@@ -105,20 +105,90 @@
 //        System.out.println("I'm child");
 //    }
 //}
+//class Person{
+//    public String info = "爸爸";
+//}
+//class Student extends Person{
+//    public String info = "儿子";
+//    public void print(){
+//        System.out.println(super.info);
+//        System.out.println(this.info);
+//    }
+//}
+//final关键字定义的类不能有子类
+//final关键字定义的方法不能被子类覆写
+//final关键字定义的变量就成为了常量，常量必须在声明的时候进行赋值，并且不能够被修改A
+
+//向上转型
+//class Person{
+//    public void print(){
+//        System.out.println("我是爸爸");
+//    }
+//}
+//class Student extends Person{
+//    public void print(){
+//        System.out.println("我是儿子");
+//    }
+//}
+//向下转型（当需要子类扩充操作的时候）
+//class Person{
+//    public void print(){
+//        System.out.println("我是爸爸");
+//    }
+//}
+//class Student extends Person{
+//    public void print(){
+//        System.out.println("我是儿子");
+//    }
+//    public void fun(){
+//        System.out.println("只有儿子有");
+//    }
+//}
+//
+//向上转型的一个核心用途：操作参数统一
 class Person{
-    public String info = "爸爸";
+    public void print(){
+        System.out.println("我是人类");
+    }
 }
 class Student extends Person{
-    public String info = "儿子";
     public void print(){
-        System.out.println(super.info);
-        System.out.println(this.info);
+        System.out.println("我是学生");
+    }
+}
+class Worker extends Person{
+    public void print(){
+        System.out.println("我是工人");
     }
 }
 public class test{
     public static void main(String[] args){
+        //向上转型的核心用途：操作参数统一
+        whoAreYou(new Student());
+        whoAreYou(new Worker());
+
+        //instaceof操作
+        //Person per = new Student();
+        //System.out.println(per instanceof Person);
+        //System.out.println(per instanceof Student);
+        //if(per instanceof Student){
+        //    Student stu = (Student)per;
+        //    stu.fun();
+        //}
+
+        //向下转型
+        //想进行向下转型前一定要先发生向上转型
+        //Person per = new Student();
+        //per.print();
+        //Student stu = (Student)per;
+        //stu.fun();
+
+        //向上转型
+        //Person per = new Student();
+        //per.print();
+
         //使用super调用父类的属性
-        new Student().print();
+        //new Student().print();
 
         //使用super调用父类的同名方法
         //new Student().PrintInfo();
@@ -155,5 +225,8 @@ public class test{
         //实现内部类
         //Outer out = new Outer();
         //out.fun();
+    }
+    public static void whoAreYou(Person per){
+        per.print();
     }
 }
