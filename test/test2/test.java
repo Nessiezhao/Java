@@ -70,28 +70,70 @@
 //    }
 //}
 //隐式继承
+//class Person{
+//    private String name;
+//    public void setName(String name){
+//        this.name = name;
+//    }
+//    public String getName(){
+//        return name;
+//    }
+//}
+//class Student extends Person{
+//    public void fun(){
+//        System.out.println(getName());
+//    }
+//}
+//观察简单的覆写
+//class Person{
+//    public String info = "Person";
+//    public void print(){
+//        System.out.println("这是Person的print方法");
+//    }
+//    public void PrintInfo(){
+//        System.out.println("I'm father");
+//    }
+//}
+//class Student extends Person{
+//    public String info = "Student";
+//    public void print(){
+//        System.out.println("这是Student的print方法");
+//    }
+//    //使用super调用父类的同名方法
+//    public void PrintInfo(){
+//        super.PrintInfo();
+//        System.out.println("I'm child");
+//    }
+//}
 class Person{
-    private String name;
-    public void setName(String name){
-        this.name = name;
-    }
-    public String getName(){
-        return name;
-    }
+    public String info = "爸爸";
 }
 class Student extends Person{
-    public void fun(){
-        System.out.println(getName());
+    public String info = "儿子";
+    public void print(){
+        System.out.println(super.info);
+        System.out.println(this.info);
     }
 }
 public class test{
     public static void main(String[] args){
+        //使用super调用父类的属性
+        new Student().print();
+
+        //使用super调用父类的同名方法
+        //new Student().PrintInfo();
+
+        //观察简单的覆写
+        //new Student().print();
+        //System.out.println(new Student().info);
+
+
         //隐式继承
-        Student st = new Student();
-        //子类能够使用的是所有非private的操作，而所有private的操作无法被直接使用，所以称为隐式继承
-        System.out.println(st.getName());
-        st.setName("张三");
-        st.fun();
+        //Student st = new Student();
+        ////子类能够使用的是所有非private的操作，而所有private的操作无法被直接使用，所以称为隐式继承
+        //System.out.println(st.getName());
+        //st.setName("张三");
+        //st.fun();
 
         //观察子类对象的产生
         //如果父类没有提供无参构造，那么必须用super()明确指明，你要调用的父类构造方法
