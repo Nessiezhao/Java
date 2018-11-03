@@ -36,13 +36,15 @@ public class Alg{
         //    }
         //    System.out.println();
         //}
-        double result = jiecheng(60);
+        //BigDecimal
+        long result = factorial(60);
         System.out.println(result);
     }
-    public static double jiecheng(double num){
-        if(num == 1){
-            return 1;
+    public static long factorial(long num){
+        if(num == 1L){
+            return 1L;
+        }else{
+            return num * factorial(num - 1);
         }
-        return num * jiecheng(num - 1);
     }
 }
