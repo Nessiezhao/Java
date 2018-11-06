@@ -2,12 +2,15 @@ public class Car{
     private String id;
     private String color;
     private int maxSpeed;
-    public Car(){
-
+    public Car(String id){
+        this.id = id;
+    }
+    public Car(String id,String color){
+        this(id);
+        this.color = color;
     }
     public Car(String id,String color,int maxSpeed){
-        this.id = id;
-        this.color = color;
+        this(id,color);
         this.maxSpeed = maxSpeed;
     }
     public void setId(String id){
@@ -34,10 +37,10 @@ public class Car{
     public static void main(String[] args){
         Car c = new Car("123456","红色",120);
         c.print();
-        Car c1 = new Car();
-        c1.setId("A121323");
-        c1.setColor("黑色");
-        c1.setMaxSpeed(240);
-        c1.print();
+        //Car c1 = new Car();
+        //c1.setId("A121323");
+        //c1.setColor("黑色");
+        //c1.setMaxSpeed(240);
+        //c1.print();
     }
 }
