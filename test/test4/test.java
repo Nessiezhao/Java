@@ -1,3 +1,28 @@
+//class Person{
+//    private String name;
+//    private int age;
+//    public Person(String name,int age){
+//        this.name = name;
+//        this.age = age;
+//    }
+//    public String toString(){
+//        return "姓名" + this.name + ",年龄" + age;
+//    }
+//    public boolean equals(Object obj){
+//        if(obj == null){
+//            return false;
+//        }
+//        if(this == obj){
+//            return true;
+//        }
+//        if(!(obj instanceof Person)){
+//            return false;
+//        }
+//        Person per = Person (obj);
+//        return this.name.equals(per.name) && this.age == per.age;
+//    }
+//}
+//class Student{}
 public class test{
     public static boolean isNumber(String str){
         char data[] = str.toCharArray();
@@ -8,14 +33,75 @@ public class test{
         }
         return true;
     }
-    public static void main(String[] args){
-        //多次拆分
-        String str = "nihao:23 | haha:24";
-        String[] result = str.split("\\|");
-        for(int i = 0; i < result.length;i++){
-            String[] temp = result[i].split(":");
-            System.out.println(temp[0] + " = "+ temp[1]);
+    public static String firstUpper(String str){
+        if("".equals(str) || str == null){
+            return str;
         }
+        if(str.length() > 1){
+            return str.substring(0,1).toUpperCase() + str.substring(1);
+        }
+        return str.toUpperCase();
+    }
+    public static void fun(StringBuffer sb){
+        sb.append("\n").append("nihao");
+    }
+    public static void printInfo(Object obj){
+        System.out.println(obj.toString());
+    }
+    public static void main(String[] args){
+        //实现对象比较
+        Person per1 = new Person("nihao",10);
+        Person per2 = new Person("nihao",10);
+        System.out.println(per1.equals(per2));
+        //String str = "Hello " + new Person("nihao",10);
+        //System.out.println(str);
+        //使用Object类接收所有类的对象
+        //printInfo(new Person("nihao",5));
+        //printInfo("hello");
+        //删除指定范围的数据
+        //StringBuffer sb = new StringBuffer("helloworld");
+        //System.out.println(sb.delete(5,10));
+        //System.out.println(sb.insert(0,"你好"));
+
+        //字符串反转
+        //StringBuffer sb = new StringBuffer("helloworld");
+        //System.out.println(sb.reverse());
+        //StringBuffer
+        //StringBuffer sb = new StringBuffer();
+        //sb.append("Hello ").append("World");
+        //fun(sb);
+        //System.out.println(sb);
+        //首字母转换成大写
+        //System.out.println(firstUpper("hello"));
+        //System.out.println(firstUpper(""));
+        //System.out.println(firstUpper("a"));
+        //判空
+        //System.out.println("hello".isEmpty());//false
+        //System.out.println("".isEmpty());//true
+        //System.out.println(new String().isEmpty());//true
+        //字符串长度
+        //String str = "  **((helloworld哈哈哈))";
+        //System.out.println(str.length());
+        //大小写转换(这个函数只转换字母)
+        //String str = "  **((helloworld哈哈哈))";
+        //System.out.println(str.toUpperCase());
+        //System.out.println(str.toLowerCase());
+
+        //去掉字符串的左右空格，但保留中间空格
+        //String str = "  hello   world   ";
+        //System.out.println("[" + str + "]");
+        //System.out.println("[" + str.trim() + "]");
+        //字符串截取
+        //String str = "helloworld";
+        //System.out.println(str.substring(5));
+        //System.out.println(str.substring(0,5));
+        //多次拆分
+        //String str = "nihao:23 | haha:24";
+        //String[] result = str.split("\\|");
+        //for(int i = 0; i < result.length;i++){
+        //    String[] temp = result[i].split(":");
+        //    System.out.println(temp[0] + " = "+ temp[1]);
+        //}
         //拆分IP地址
         //String str = "192.168.1.1";
         //String[] result = str.split("\\.");
