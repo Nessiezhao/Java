@@ -23,6 +23,27 @@
 //    }
 //}
 //class Student{}
+//自己定义一个包装类
+class IntDemo{
+    private int num;
+    public IntDemo(int num){
+        this.num = num;
+    }
+    public int intValue(){
+        return this.num;
+    }
+}
+interface IMessage{
+    public void getMessage();
+}
+class IMessageImpl implements IMessage{
+    public String toString(){
+        return "I am small biter";
+    }
+    public void getMessage(){
+        System.out.println("欢迎你");
+    }
+}
 public class test{
     public static boolean isNumber(String str){
         char data[] = str.toCharArray();
@@ -49,10 +70,61 @@ public class test{
         System.out.println(obj.toString());
     }
     public static void main(String[] args){
+        String str = String.valueOf(100);
+        System.out.println(str);
+        //如果转换时遇见非数字字符就会出现错误,与boolean转换就不会发生此错误
+        //String str = "123eqwe";
+        //boolean tmp = Boolean.parseBoolean(str);
+        //System.out.println(tmp);//false
+        //String str = "123aaa";
+        //double num = Double.parseDouble(str);
+        //System.out.println(num);
+        //将字符串变成double型
+        //String str = "123";
+        //double num = Double.parseDouble(str);
+        //System.out.println(num);
+        //将字符串变为int型
+        //String str = "123";
+        //int num = Integer.parseInt(str);
+        //System.out.println(num);
+
+        //观察“==”和“equals”的问题
+        //Integer num1 = new Integer(10);
+        //Integer num2 = new Integer(10);
+        //System.out.println(num1 == num2);//false
+        //System.out.println(num1 == new Integer(10));//fasle
+        //System.out.println(num1.equals(new Integer(10)));//true
+
+        //自动装箱与拆箱
+        //Integer x = 55;
+        //System.out.println(++x * 5);
+        //装箱和拆箱
+        //Integer num = new Integer(55);//装箱
+        //int data = num.intValue();//拆箱
+        //System.out.println(data);
+        //使用IntDemo
+        //Object obj = new IntDemo(55);
+        //IntDemo tmp = (IntDemo)obj;
+        //System.out.println(tmp.intValue());
+
+        //使用Object接收接口对象
+        //IMessage msg = new IMessageImpl();
+        //Object obj  = msg;
+        //System.out.println(obj);
+        //IMessage temp = (IMessage) obj;
+        //temp.getMessage();
+
+        //用Object接收数组对象
+        //Object obj = new int[]{1,2,3,4,5};
+        //int data[] = (int[]) obj;
+        //for(int i: data){
+        //    System.out.println(i + ",");
+        //}
+        
         //实现对象比较
-        Person per1 = new Person("nihao",10);
-        Person per2 = new Person("nihao",10);
-        System.out.println(per1.equals(per2));
+        //Person per1 = new Person("nihao",10);
+        //Person per2 = new Person("nihao",10);
+        //System.out.println(per1.equals(per2));
         //String str = "Hello " + new Person("nihao",10);
         //System.out.println(str);
         //使用Object类接收所有类的对象
